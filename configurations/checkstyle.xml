@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC>
+
+<module name="Checker">
+
+    <module name="NewLineAtEndOfFile"/>
+
+    <module name="Translation"/>
+
+    <module name="FileLength"/>
+
+    <module name="FileTabCharacter"/>
+
+    <module name="TreeWalker">
+        <module name="PackageName"/>
+    </module>
+
+</module>
