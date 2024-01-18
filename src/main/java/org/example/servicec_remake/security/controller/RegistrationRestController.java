@@ -8,6 +8,7 @@ import org.example.servicec_remake.security.mapper.UserFactory;
 import org.example.servicec_remake.security.model.User;
 import org.example.servicec_remake.security.service.RegistrationService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,7 @@
 package org.example.servicec_remake.security.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.example.servicec_remake.security.controller.dto.LoginRequest;
 import org.example.servicec_remake.security.controller.dto.LoginResponse;
 import org.example.servicec_remake.security.model.AuthenticatedUser;
@@ -14,14 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/v1/login")
 public class LoginRestController {
 
     private final LoginService loginService;
-
-    public LoginRestController(LoginService loginService) {
-        this.loginService = loginService;
-    }
 
     @PostMapping
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {

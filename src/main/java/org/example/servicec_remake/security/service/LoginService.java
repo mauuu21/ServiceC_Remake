@@ -1,7 +1,9 @@
 package org.example.servicec_remake.security.service;
 
+import lombok.AllArgsConstructor;
 import org.example.servicec_remake.security.mapper.UserMapper;
 import org.example.servicec_remake.security.model.AuthenticatedUser;
+import org.example.servicec_remake.security.model.User;
 import org.example.servicec_remake.security.repository.UserDocument;
 import org.example.servicec_remake.security.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class LoginService implements UserDetailsService {
 
     private final UserRepository userRepository;
@@ -22,14 +25,6 @@ public class LoginService implements UserDetailsService {
 
     private final JwtTokenProvider jwtTokenProvider;
 
-    public LoginService(UserRepository userRepository, UserMapper userMapper, AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider) {
-        this.userRepository = userRepository;
-        this.userMapper = userMapper;
-        this.authenticationManager = authenticationManager;
-        this.jwtTokenProvider = jwtTokenProvider;
-    }
-
-
     public AuthenticatedUser login(String userName, String password) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -37,8 +32,13 @@ public class LoginService implements UserDetailsService {
 
         String token = jwtTokenProvider.createToken(authentication);
 
-        //todo builder
-        return null;
+        User user = (User) authentication.getPrincipal();
+
+
+        return AuthenticatedUser.builder()
+                .user(user)
+                .token(token)
+                .build();
     }
 
     @Override
