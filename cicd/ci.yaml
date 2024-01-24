@@ -1,0 +1,32 @@
+trigger:
+  branches:
+    exclude:
+      - feature*
+      - NOJIRA*
+      - nojira*
+      - czirjak*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: git_configurations
+
+
+steps:
+  - task: InstallSSHKey@0
+    inputs:
+      knownHostsEntry: $(knownHosts)
+      sshPublicKey: $(publicKey)
+      sshKeySecureFile: 'id_rsa'
+    displayName: 'Install SSH'
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+    displayName: 'Install Java 21'
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '20.10.21'
+    displayName: 'Install Docker'
