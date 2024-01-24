@@ -1,1 +1,5 @@
 rootProject.name = 'ServiceC_Remake'
+
+include 'form-service'
+include 'form-service-integration-test'
+include 'mock-moderation-service'
