@@ -30,3 +30,6 @@ steps:
     inputs:
       dockerVersion: '20.10.21'
     displayName: 'Install Docker'
+  - script: |
+      ./gradlew build
+    displayName: 'Gradle build'
