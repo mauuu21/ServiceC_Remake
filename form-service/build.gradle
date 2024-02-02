@@ -55,6 +55,10 @@ task copyDockerFile(type: Copy) {
 
 }
 
+jar {
+    enabled = false
+}
+
 def imageName = "educodehunters/service-c-form-service"
 
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage

@@ -31,5 +31,13 @@ steps:
       dockerVersion: '20.10.21'
     displayName: 'Install Docker'
   - script: |
-      ./gradlew build
-    displayName: 'Gradle build'
+      ./gradlew clean
+      ./gradlew check --info
+    displayName: 'Compile & test & check'
+  - script: |
+      ./gradlew build -x check --info
+    displayName: 'Create jar'
+  - script: |
+      ./gradlew buildDockerImageAsLatest --info
+      docker images
+    displayName: 'Create docker image'

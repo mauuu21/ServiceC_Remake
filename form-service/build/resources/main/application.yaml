@@ -1,0 +1,14 @@
+endpoints:
+  web:
+    exposure:
+      include: health,info,prometheus
+
+form-service:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:C0EDC2B9C12155C6DF60F929BEC2BAFE8F3986D5B7E9D232634ABD97EEF2B0E4}
+      expiration-time: 3600 #1 hour
+  #integration:
+    #moderation:
+      #url: 173.249.3.182:5500
+      #path: /moderation
