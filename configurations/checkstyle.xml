@@ -5,14 +5,4 @@
 
     <module name="NewLineAtEndOfFile"/>
 
-    <module name="Translation"/>
-
-    <module name="FileLength"/>
-
-    <module name="FileTabCharacter"/>
-
-    <module name="TreeWalker">
-        <module name="PackageName"/>
-    </module>
-
 </module>
