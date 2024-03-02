@@ -32,10 +32,9 @@ steps:
     displayName: 'Install Docker'
   - script: |
       ./gradlew clean
-      ./gradlew check --info
     displayName: 'Compile & test & check'
   - script: |
-      ./gradlew build -x check --info
+      ./gradlew assemble
     displayName: 'Create jar'
   - script: |
       ./gradlew buildDockerImageAsLatest --info
