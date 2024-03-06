@@ -22,7 +22,7 @@ steps:
     displayName: 'Install SSH'
   - task: JavaToolInstaller@0
     inputs:
-      versionSpec: '21'
+      versionSpec: '17'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
     displayName: 'Install Java 21'
