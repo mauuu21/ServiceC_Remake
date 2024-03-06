@@ -12,3 +12,8 @@ form-service:
     #moderation:
       #url: 173.249.3.182:5500
       #path: /moderation
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://morvai21mate:${DB_PASSWORD}@mongocluster.szqtdo1.mongodb.net/ServiceC_db?retryWrites=true&w=majority

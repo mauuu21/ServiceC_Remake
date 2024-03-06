@@ -18,7 +18,7 @@ public class RegistrationService {
         this.userMapper = userMapper;
     }
 
-    public User register(User newUser){
+    public User register(User newUser) {
 
         UserDocument  newUserDocument = userMapper.convertUserToUserDocument(newUser);
         UserDocument savedUserDocument = userRepository.save(newUserDocument);
