@@ -1,0 +1,26 @@
+{
+  "id": null,
+  "name": "This is a form ...",
+  "description": "This is a description of a form ...",
+  "active": true,
+  "questions": [
+    {
+      "freeText": null,
+      "radioButton": {
+        "question": "This is a question ...",
+        "options": [
+          "good",
+          "bad",
+          "mild",
+          "worse"
+        ]
+      }
+    },
+    {
+      "freeText": {
+        "question": "This is a question ..."
+      },
+      "radioButton": null
+    }
+  ]
+}
